@@ -254,14 +254,18 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   */
 
-  React.render(
-      React.createElement(Composebox, {
-          close_btn: false, 
-          user: user
-      }),
-      document.getElementById('js-composebox-wrap')
-  ); 
+React.render(
+    React.createElement(Composebox, {
+        base_path: 'http://45.55.240.0:8080',
+        close_btn: false, 
+        user: user
+    }),
+    document.getElementById('js-composebox-wrap')
+); 
 
-  $('body').trigger('newPost');
+  var message = 'Hi shane!';
+  var image_url = 'http://www.travelhouse.ch/CMS/18/1932567/2/burren-und-connemara.jpg';
+   
+  $('body').trigger('ideaPost', [message, image_url]);
 
 });
